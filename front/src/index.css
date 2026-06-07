@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Whimsical Pantry Design - Cozy, Playful & Magical */
+
+@layer base {
+  :root {
+    /* Warm, muted palette */
+    --background: 35 30% 96%;
+    /* Creamy Ivory */
+    --foreground: 20 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 20% 20%;
+
+    --popover: 35 30% 98%;
+    --popover-foreground: 20 20% 20%;
+
+    /* Dusty Rose */
+    --primary: 350 40% 70%;
+    --primary-foreground: 35 30% 98%;
+
+    /* Sage Green */
+    --secondary: 100 20% 85%;
+    --secondary-foreground: 100 30% 25%;
+
+    --muted: 35 20% 90%;
+    --muted-foreground: 20 10% 45%;
+
+    /* Soft Terracotta */
+    --accent: 20 50% 65%;
+    --accent-foreground: 35 30% 98%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 20 50% 65%;
+
+    --radius: 1.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Nunito', system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Quicksand', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-deep {
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Whimsical Utility Classes */
+
+.whimsical-card {
+  @apply bg-white rounded-[2rem] border-none shadow-soft transition-all duration-300;
+  overflow: hidden;
+}
+
+.whimsical-card:hover {
+  @apply shadow-deep -translate-y-2;
+}
+
+/* Diorama Effect (Tiny hill shadow) */
+.diorama-effect {
+  position: relative;
+}
+
+.diorama-effect::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: radial-gradient(ellipse at center bottom, rgba(0, 0, 0, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hanging Tag Style */
+.hanging-tag {
+  @apply inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border-t-2 border-foreground/5 transition-all;
+  transform-origin: top center;
+}
+
+.hanging-tag:hover {
+  @apply translate-y-1 rotate-2;
+}
+
+/* Decorative Badge */
+.decorative-badge {
+  @apply bg-secondary/50 text-secondary-foreground px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-2;
+}
+
+/* Vintage Header Sign */
+.vintage-sign {
+  @apply relative py-12 text-center overflow-hidden;
+}
+
+.vintage-sign::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 100%;
+  background: radial-gradient(circle at center, hsl(var(--secondary) / 0.3) 0%, transparent 60%);
+  z-index: -1;
+}
+
+/* Ornate Golden Key CTA */
+.golden-key-cta {
+  @apply inline-flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-yellow-400 via-amber-200 to-yellow-600 shadow-xl border-2 border-yellow-200/50 transition-all duration-300 active:scale-95;
+}
+
+.golden-key-cta:hover {
+  @apply scale-105;
+  box-shadow: 0 0 30px hsl(40 100% 50% / 0.4);
+}
+
+/* Animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Custom Scrollbar for Dietary Mobile */
+.dietary-scroll {
+  @apply flex gap-3 overflow-x-auto pb-6;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.dietary-scroll::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
+
+/* Parchment texture subtle */
+.parchment-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}

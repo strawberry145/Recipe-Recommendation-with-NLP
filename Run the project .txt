@@ -1,0 +1,17 @@
+
+HOW TO RUN THE PROJECT (SINGLE PORT MODE):
+
+1. Build the frontend assets:
+   cd front
+   npm install
+   npm run build
+
+2. Start the FastAPI backend:
+   cd ../backend
+   pip install -r requirements.txt
+   python main.py
+
+The entire application will be available at:
+http://localhost:5000
+
+The backend now automatically serves the frontend interface, so you only need this one port.
