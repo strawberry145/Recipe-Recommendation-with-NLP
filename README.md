@@ -1,6 +1,6 @@
-# 🥨 Whimsical Pantry — AI Recipe Recommendation System
+# Whimsical Pantry — AI Recipe Recommendation System
 
-## 📊 Project Overview & Machine Learning Workflow
+## Project Overview & Machine Learning Workflow
 
 This project is a Machine Learning-powered Recipe Recommendation System. It aims to solve the common problem: *"What can I cook with the ingredients I currently have in my fridge/pantry?"*
 
@@ -28,7 +28,7 @@ To make it more robust, the model was augmented with custom Python logic to expl
 
 ---
 
-## 🚀 Application Integration (React + FastAPI)
+## Application Integration (React + FastAPI)
 
 To make this ML model usable, we integrated it into a full-stack application featuring a magical, cozy kitchen UI.
 
@@ -39,7 +39,7 @@ To make this ML model usable, we integrated it into a full-stack application fea
 
 ### Getting Started
 
-#### ⚠️ Important — Port Conflicts
+#### Important — Port Conflicts
 The backend uses **port 5000**. If you see `Errno 10048 (address already in use)`, the port is occupied by a previous session. Use the startup script below which handles this automatically.
 
 #### Backend Setup
